@@ -1,0 +1,120 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Lillicrap%
+\ \protect \BOthers {.}}{%
+Lillicrap%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+DDPG}
+\APACinsertmetastar {%
+DDPG}%
+\begin{APACrefauthors}%
+Lillicrap, T\BPBI P.%
+, Hunt, J\BPBI J.%
+, Pritzel, A.%
+, Heess, N.%
+, Erez, T.%
+, Tassa, Y.%
+\BDBL {}Wierstra, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+\APACrefbtitle {Continuous control with deep reinforcement learning.}
+  {Continuous control with deep reinforcement learning.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Mnih%
+\ \protect \BOthers {.}}{%
+Mnih%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2013}}%
+}]{%
+DBLP:journals/corr/MnihKSGAWR13}
+\APACinsertmetastar {%
+DBLP:journals/corr/MnihKSGAWR13}%
+\begin{APACrefauthors}%
+Mnih, V.%
+, Kavukcuoglu, K.%
+, Silver, D.%
+, Graves, A.%
+, Antonoglou, I.%
+, Wierstra, D.%
+\BCBL {}\ \BBA {} Riedmiller, M\BPBI A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2013}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Playing Atari with Deep Reinforcement Learning} {Playing
+  atari with deep reinforcement learning}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{CoRR}{abs/1312.5602}{}{}.
+\newblock
+\begin{APACrefURL} \url{http://arxiv.org/abs/1312.5602} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Mnih%
+\ \protect \BOthers {.}}{%
+Mnih%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+DQN_22}
+\APACinsertmetastar {%
+DQN_22}%
+\begin{APACrefauthors}%
+Mnih, V.%
+, Kavukcuoglu, K.%
+, Silver, D.%
+, Rusu, A\BPBI A.%
+, Veness, J.%
+, Bellemare, M\BPBI G.%
+\BDBL {}Hassabis, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Human-level control through deep reinforcement learning}
+  {Human-level control through deep reinforcement learning}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Nature}{518}{7540}{529--533}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1038/nature14236} \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1038/nature14236} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Sutton%
+\ \BBA {} Barto%
+}{%
+Sutton%
+\ \BBA {} Barto%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+RLBook}
+\APACinsertmetastar {%
+RLBook}%
+\begin{APACrefauthors}%
+Sutton, R.%
+\BCBT {}\ \BBA {} Barto, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2018}.
+\newblock
+\APACrefbtitle {Reinforcement Learning: An Introduction} {Reinforcement
+  learning: An introduction}\ (\PrintOrdinal{2nd Edition}\ \BEd).
+\newblock
+\APACaddressPublisher{}{The MIT Press}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

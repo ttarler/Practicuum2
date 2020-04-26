@@ -1,0 +1,23 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+[H!]
+\label{biped}
+\caption{Bipedal Walker Environment}
+\includegraphics[width = 0.8\textwidth]{bipedal.png}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\includegraphics[]{results/dqn/rewards.png}
+
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+[H!]
+\includegraphics[width=0.8\textwidth]{results/ddpg/run4/mean_100.png}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+[H!]
+\includegraphics[width=0.8\textwidth]{results/ddpg/run4/Rewards.png}
+\end{figure*}

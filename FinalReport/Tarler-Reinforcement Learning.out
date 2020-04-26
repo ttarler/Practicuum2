@@ -1,0 +1,12 @@
+\BOOKMARK [1][-]{section*.1}{Deep Reinfocrcement Learning: Application of DQN and DDG to the Bipedal Walker Problem}{}% 1
+\BOOKMARK [1][-]{section*.3}{Theory}{}% 2
+\BOOKMARK [2][-]{section*.4}{Reinforcement Learning}{section*.3}% 3
+\BOOKMARK [2][-]{section*.5}{Deep Q-Networks}{section*.3}% 4
+\BOOKMARK [2][-]{section*.6}{Deep Deterministic Policy Networks}{section*.3}% 5
+\BOOKMARK [1][-]{section*.7}{Bipedal Walker}{}% 6
+\BOOKMARK [1][-]{section*.8}{Results}{}% 7
+\BOOKMARK [2][-]{section*.9}{Methodology}{section*.8}% 8
+\BOOKMARK [2][-]{section*.10}{DQN}{section*.8}% 9
+\BOOKMARK [2][-]{section*.11}{DDPG}{section*.8}% 10
+\BOOKMARK [1][-]{section*.12}{Concluding Remarks}{}% 11
+\BOOKMARK [1][-]{section*.13}{References}{}% 12

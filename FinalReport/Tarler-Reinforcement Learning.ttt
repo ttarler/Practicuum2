@@ -1,0 +1,35 @@
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[t]
+\begin{tabular}[t]{|l|l|l|l|l|}
+\hline
+Num   & Observation                   & Min  & Max  & Mean \\ \hline
+0     & hull\_angle                   & 0    & $2 \pi$ & 0.5  \\ \hline
+1     & hull\_angularVelocity         & -$\infty$ & +$\infty$ & -    \\ \hline
+2     & vel\_x                        & -1   & +1   & -    \\ \hline
+3     & vel\_y                        & -1   & +1   & -    \\ \hline
+4     & hip\_joint\_1\_angle          & -$\infty$& +$\infty$& -    \\ \hline
+5     & hip\_joint\_1\_speed          & -$\infty$ & +$\infty$& -    \\ \hline
+6     & knee\_joint\_1\_angle         & -$\infty$& +$\infty$& -    \\ \hline
+7     & knee\_joint\_1\_speed         & -$\infty$& +$\infty$& -    \\ \hline
+8     & leg\_1\_ground\_contact\_flag & 0    & 1    & -    \\ \hline
+9     & hip\_joint\_2\_angle          & -$\infty$& +$\infty$& -    \\ \hline
+10    & hip\_joint\_2\_speed          & -$\infty$& +$\infty$& -    \\ \hline
+11    & knee\_joint\_2\_angle         & -$\infty$& +$\infty$& -    \\ \hline
+12    & knee\_joint\_2\_speed         & -$\infty$& +$\infty$& -    \\ \hline
+13    & leg\_2\_ground\_contact\_flag & 0    & 1    & -    \\ \hline
+14-23 & 10 lidar readings             & -$\infty$& +$\infty$& - \\  \hline
+\end{tabular}
+\end{table*}
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+[t]
+\begin{tabular}{|l|l|l|l|}
+\hline
+Num & Name   & Min & Max \\ \hline
+0   & Hip 1  & -1  & +1  \\ \hline
+1   & Knee 1 & -1  & +1  \\ \hline
+2   & Hip 2  & -1  & +1  \\ \hline
+3   & Knee 2 & -1  & +1  \\ \hline
+\end{tabular}
+\end{table*}
