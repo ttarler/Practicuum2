@@ -1,12 +1,16 @@
-\documentclass[man, 12pt]{apa6}
-\title{Deep Reinfocrcement Learning: Application of DQN and DDG to the Bipedal Walker Problem}
+\documentclass[doc, onecolumn, 12pt]{apa6}
+\title{Deep Reinforcement Learning: Application of Deep Q-Networks and Deterministic Deep Policy Gradient to the Bipedal Walker Problem}
 \usepackage{amsfonts}
 \usepackage{amsmath}
+\usepackage{setspace}
+\doublespacing
 \usepackage{paralist}
 \usepackage{hyperref}
 \usepackage{amsfonts}
 \usepackage{graphicx}
+\usepackage[inline]{enumitem}
 \usepackage[section]{placeins}
+\usepackage{float}
 \usepackage{grffile}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
@@ -33,6 +37,9 @@ Due to the complexity of the models, the author's agents were never able to succ
 \newpage
 \tableofcontents
 \newpage
+\listoffigures
+\newpage
+
 Currently, many applications of data science rely on supervised and unsupervised learning models. These are tasks associated with labelling or predicting a value for a dataset or attempting to ascertain an underlying structure to the data. The difficulty with models such as these is applying the results. For example, a model might suggest that a transaction has an 82\% probability of being fraudulent but it is up to the bank to decide what to do with that information. Reinforcement learning, on the other hand, focuses explicitly on actions or policies that an agent or actor can undertake in order to maximize some underlying profit function with respect to the environment. Mathematically, we describe this as \[ \mathcal{G} = \lbrace S_{i}, A_{i}, \Pi(S,A) \mapsto \mathbb{R} \rbrace\] where $\mathcal{G}$ is the game, $S_{i}$ is the state of agents and the environment, $A_{i}$ is the action set of the agent, and $\Pi$ is the profit function. The goal of reinforcement learning is to develop a set of rules, policies, or action-decisions that maximize the profit for a given agent. When principles of deep learning (i.e. neural networks) are applied to this framework, we refer to it as deep reinforcement learning. 
 
 The author intends to use existing reinforcement learning frameworks and explore optimizing them against a game. The primary intention of this project is to compare the efficacy of deep reinforcement learning compared to techniques that do not utilize reinforcement learning. The intention is to explore and understand when deep-learning is more applicable to the problem, which has a faster training time, which performs better after a set number of training cycles, and other evaluation items. 
@@ -220,224 +227,179 @@ The goal of the bipedal walker is to train the robot to complete the course. The
 This creates an easy to see victory condition, that is when $R> 300$. The specific structure of the cost function is such that the best performing Robot walkers will not only complete the course in a minimum of time, but will also have the smallest amount of energy used for walking.
 The starting position of the simulation is with the robot at the far left of the course with mostly straight legs. The failure condition is when the hull-contact sensor touches ground (the robot has fallen) or the stage has been complete.  Please reference \ref{biped} for a visual diagram of the environment. 
 
-\begin{figure}[H!]
+\begin{figure}[H]
 \label{biped}
 \caption{Bipedal Walker Environment}
-\includegraphics[width = 0.8\textwidth]{bipedal.png}
+\includegraphics[width = \textwidth]{bipedal.png}
 \end{figure} 
 \FloatBarrier
-\newpage
+\clearpage
 \section{Results}
 \subsection{Methodology}
-For both the DQN and the DDPG, training was done on a remote Regis cluster with three GPU's and job management. These clusters were built without a GUI interface. To begin with, results were run with the episodes and epochs setting set to 10000 each with model checkpoints as applicable. The rewards over time was pulled back as a .csv file and then rendering using python graphs. \
+For both the DQN and the DDPG, training was done on a remote Regis cluster with three GPU's and job management. These clusters were built without a GUI interface. To begin with, results were run with the episodes and epochs setting set to 10000 each with model checkpoints as applicable.
 
 Code was implemented from the [insert] repositories. Code was tweaked to run on the Regis University cluster, with parameters changed around environment rendering, save-states and V1 vs. V2 implementations. The neural networks were minorly tweaked to get them operating and returning results. 
 
 \subsection{DQN}
-Below is the neural network used for the DQN run. It was using the following parameters:
+The following hyperparameters were used for DQN networks. \begin{itemize}
+\item $\gamma = 0.98$
+\item $\alpha_{agent} = 0.02$
+\item $\epsilon_{\text{initial}} = 1.0$\footnote{$\epsilon$ varies throughout based on a decay rate of $0.995$} 
+\end{itemize}
 
-\begin{verbatim}
+Additionally, we had a simple sequential model for the DQN, as shown in Figure \ref{DQN_Architecture}.
+
+\begin{figure}
+\label{DQN_Architecture}
+\includegraphics[width=\textwidth]{results/dqn/DQN_Model.png}
+\caption{Neural Architecture of the DQN Model used for training}
+\end{figure}
+
+\FloatBarrier
+\subsubsection{1000 Episodes}
+\begin{figure}[H]
+\label{DQN_1000Ep_Error}
+\includegraphics[width =\textwidth, height=0.4 \textheight]{results/dqn/1000_ep/Error.png}
+\caption{Loss and Error when DQN is run for 1000 Episodes}
+\end{figure}
+
+\begin{figure}
+\label{DQN_1000Ep_Rewards}
+\includegraphics[width =\textwidth, height=0.4 \textheight]{results/dqn/1000_ep/Rewards.png}
+\caption{Reward  when DQN is run for 1000 Episodes}
+\end{figure}
+
+\begin{figure}
+\label{DQN_1000Ep_Epsilon}
+\includegraphics[width =\textwidth, height=0.4 \textheight]{results/dqn/1000_ep/Epsilon.png}
+\caption{Epislon when DQN is run for 1000 Episodes}
+\end{figure}
+
+\FloatBarrier 
+\subsubsection{5000 Episodes}
+\begin{figure}
+\label{DQN_5000Ep_Error}
+\includegraphics[width =\textwidth, height=0.4 \textheight]{results/dqn/5000_ep/Error.png}
+\caption{Loss and Error when DQN is run for 5000 Episodes}
+\end{figure}
+
+\begin{figure}
+\label{DQN_5000Ep_Rewards}
+\includegraphics[width =\textwidth, height=0.4 \textheight]{results/dqn/5000_ep/Rewards.png}
+\caption{Reward  when DQN is run for 5000 Episodes}
+\end{figure}
+
+\begin{figure}
+\label{DQN_5000Ep_Epsilon}
+\includegraphics[width =\textwidth, height=0.4 \textheight]{results/dqn/5000_ep/Epsilon.png}
+\caption{Epislon when DQN is run for 5000 Episodes}
+\end{figure}
 
 
-Model: "sequential_1"
-_________________________________________________________________
-Layer (type)                 Output Shape              Param #   
-=================================================================
-dense_1 (Dense)              (None, 2500)              62500     
-_________________________________________________________________
-dense_2 (Dense)              (None, 2000)              5002000   
-_________________________________________________________________
-dropout_1 (Dropout)          (None, 2000)              0         
-_________________________________________________________________
-dense_3 (Dense)              (None, 1500)              3001500   
-_________________________________________________________________
-dense_4 (Dense)              (None, 4)                 6004      
-=================================================================
-Total params: 8,072,004
-Trainable params: 8,072,004
-Non-trainable params: 0
-_________________________________________________________________
-None
------------------------------------
-Environment Observation_space:  Box(24,)
-Environment Action_space:  Box(4,)
------------------------------------
-\end{verbatim}
+Overall, since rewards were never greater than 300, we did not have a lot of success here. 
+\FloatBarrier
+\subsection{DDPG}
 
-Unfortunately, due to a corrupted model we did the final trains with the below specification. 
+The following hyperparameters we used for the DDPG networks. \begin{itemize}
+\item $\gamma = 0.85$
+\item $\alpha_{agent} = 0.1$
+\item $\alpha_{critic} = 0.02$
+\item $\hat{\alpha} = 0.1$ 
+\item $\tau = 0.01$
+\item $\epsilon_{\text{initial}} = 1.0$\footnote{$\epsilon$ varies throughout, similar to DQN, and is governed by the Ornstein Uhlenbeck Process} 
+\end{itemize}
+
+The four networks used in the DDPG are listed below: 
+
+\begin{figure}
+\label{DDPG_ActorLocal}
+\includegraphics[width=\textwidth]{results/ddpg/DDPG_Actorlc.png}
+\caption{DDPG Actor Local Network}
+\end{figure}
 
 
 \begin{figure}
-\includegraphics[]{results/dqn/rewards.png}
-
+\label{DDPG_ActorTarget}
+\includegraphics[width=\textwidth]{results/ddpg/DDPG_Actortg.png}
+\caption{DDPG Actor Target Network}
 \end{figure}
 
-Overall, since rewards were never greater than 300, we did not have a lot of success here. 
-\subsection{DDPG}
-
-\begin{verbatim} \label{ActorNN}
-_________________________________________________________________________________________________
-Layer (type)                    Output Shape         Param #     Connected to                     
-==================================================================================================
-input_3 (InputLayer)            (None, 10)           0                                            
-__________________________________________________________________________________________________
-input_4 (InputLayer)            (None, 14)           0                                            
-__________________________________________________________________________________________________
-dense_1 (Dense)                 (None, 256)          2816        input_3[0][0]                    
-__________________________________________________________________________________________________
-dense_2 (Dense)                 (None, 256)          3840        input_4[0][0]                    
-__________________________________________________________________________________________________
-dropout_1 (Dropout)             (None, 256)          0           dense_1[0][0]                    
-__________________________________________________________________________________________________
-gaussian_noise_1 (GaussianNoise (None, 256)          0           dense_2[0][0]                    
-__________________________________________________________________________________________________
-concatenate_1 (Concatenate)     (None, 512)          0           dropout_1[0][0]                  
-                                                                 gaussian_noise_1[0][0]           
-__________________________________________________________________________________________________
-dense_3 (Dense)                 (None, 128)          65664       concatenate_1[0][0]              
-__________________________________________________________________________________________________
-dense_4 (Dense)                 (None, 4)            516         dense_3[0][0]                    
-==================================================================================================
-Total params: 72,836
-Trainable params: 72,836
-Non-trainable params: 0
-__________________________________________________________________________________________________
-Actor None
-Model: "model_2"
-__________________________________________________________________________________________________
-Layer (type)                    Output Shape         Param #     Connected to                     
-==================================================================================================
-input_7 (InputLayer)            (None, 10)           0                                            
-__________________________________________________________________________________________________
-input_8 (InputLayer)            (None, 14)           0                                            
-__________________________________________________________________________________________________
-dense_5 (Dense)                 (None, 256)          2816        input_7[0][0]                    
-__________________________________________________________________________________________________
-dense_6 (Dense)                 (None, 256)          3840        input_8[0][0]                    
-__________________________________________________________________________________________________
-dropout_2 (Dropout)             (None, 256)          0           dense_5[0][0]                    
-__________________________________________________________________________________________________
-gaussian_noise_2 (GaussianNoise (None, 256)          0           dense_6[0][0]                    
-__________________________________________________________________________________________________
-concatenate_2 (Concatenate)     (None, 512)          0           dropout_2[0][0]                  
-                                                                 gaussian_noise_2[0][0]           
-__________________________________________________________________________________________________
-dense_7 (Dense)                 (None, 128)          65664       concatenate_2[0][0]              
-__________________________________________________________________________________________________
-dense_8 (Dense)                 (None, 4)            516         dense_7[0][0]                    
-==================================================================================================
-Total params: 72,836
-Trainable params: 72,836
-Non-trainable params: 0
-__________________________________________________________________________________________________
-Actor None
-ddpg_batch.py:228: UserWarning: Update your `Model` call to the Keras 2 API: `Model(inputs=[<tf.Tenso..., outputs=Tensor("de...)`
-  model  = Model(input=[lidar_input,state_input,action_input], output=output)
-Model: "model_3"
-__________________________________________________________________________________________________
-Layer (type)                    Output Shape         Param #     Connected to                     
-==================================================================================================
-input_9 (InputLayer)            (None, 10)           0                                            
-__________________________________________________________________________________________________
-input_10 (InputLayer)           (None, 14)           0                                            
-__________________________________________________________________________________________________
-dense_9 (Dense)                 (None, 256)          2816        input_9[0][0]                    
-__________________________________________________________________________________________________
-dense_10 (Dense)                (None, 256)          3840        input_10[0][0]                   
-__________________________________________________________________________________________________
-input_11 (InputLayer)           (None, 4)            0                                            
-__________________________________________________________________________________________________
-dropout_3 (Dropout)             (None, 256)          0           dense_9[0][0]                    
-__________________________________________________________________________________________________
-dropout_4 (Dropout)             (None, 256)          0           dense_10[0][0]                   
-__________________________________________________________________________________________________
-dense_11 (Dense)                (None, 256)          1280        input_11[0][0]                   
-__________________________________________________________________________________________________
-concatenate_3 (Concatenate)     (None, 512)          0           dropout_3[0][0]                  
-                                                                 dropout_4[0][0]                  
-__________________________________________________________________________________________________
-dropout_5 (Dropout)             (None, 256)          0           dense_11[0][0]                   
-__________________________________________________________________________________________________
-concatenate_4 (Concatenate)     (None, 768)          0           concatenate_3[0][0]              
-                                                                 dropout_5[0][0]                  
-__________________________________________________________________________________________________
-dense_12 (Dense)                (None, 128)          98432       concatenate_4[0][0]              
-__________________________________________________________________________________________________
-dropout_6 (Dropout)             (None, 128)          0           dense_12[0][0]                   
-__________________________________________________________________________________________________
-dense_13 (Dense)                (None, 1)            129         dropout_6[0][0]                  
-==================================================================================================
-Total params: 106,497
-Trainable params: 106,497
-Non-trainable params: 0
-\end{verbatim}
-
-The actor networks are relatively complex. Generally speaking, there are two neural network input spaces: the hull releadings and the lidar readings. Each of these networks is trained separate and uses a Convulitional Neural Network on the lindar inputs before meging them. Then a seperate LSTM network (if enabled). is used to combine the inputs. 
-
-Seperately, the target policy and the critic networks are generally sequential models. 
-
-\begin{verbatim}
-Critic None
-Model: "model_4"
-__________________________________________________________________________________________________
-Layer (type)                    Output Shape         Param #     Connected to                     
-==================================================================================================
-input_12 (InputLayer)           (None, 10)           0                                            
-__________________________________________________________________________________________________
-input_13 (InputLayer)           (None, 14)           0                                            
-__________________________________________________________________________________________________
-dense_14 (Dense)                (None, 256)          2816        input_12[0][0]                   
-__________________________________________________________________________________________________
-dense_15 (Dense)                (None, 256)          3840        input_13[0][0]                   
-__________________________________________________________________________________________________
-input_14 (InputLayer)           (None, 4)            0                                            
-__________________________________________________________________________________________________
-dropout_7 (Dropout)             (None, 256)          0           dense_14[0][0]                   
-__________________________________________________________________________________________________
-dropout_8 (Dropout)             (None, 256)          0           dense_15[0][0]                   
-__________________________________________________________________________________________________
-dense_16 (Dense)                (None, 256)          1280        input_14[0][0]                   
-__________________________________________________________________________________________________
-concatenate_5 (Concatenate)     (None, 512)          0           dropout_7[0][0]                  
-                                                                 dropout_8[0][0]                  
-__________________________________________________________________________________________________
-dropout_9 (Dropout)             (None, 256)          0           dense_16[0][0]                   
-__________________________________________________________________________________________________
-concatenate_6 (Concatenate)     (None, 768)          0           concatenate_5[0][0]              
-                                                                 dropout_9[0][0]                  
-__________________________________________________________________________________________________
-dense_17 (Dense)                (None, 128)          98432       concatenate_6[0][0]              
-__________________________________________________________________________________________________
-dropout_10 (Dropout)            (None, 128)          0           dense_17[0][0]                   
-__________________________________________________________________________________________________
-dense_18 (Dense)                (None, 1)            129         dropout_10[0][0]                 
-==================================================================================================
-Total params: 106,497
-Trainable params: 106,497
-Non-trainable params: 0
-__________________________________________________________________________________________________
-Critic None
-\end{verbatim} 
-
-\FloatBarrier
-\begin{figure}[H!]
-\includegraphics[width=0.8\textwidth]{results/ddpg/run4/mean_100.png}
+\begin{figure}
+\label{DDPG_CriticLocal}
+\includegraphics[width=\textwidth]{results/ddpg/DDPG_critictlc.png}
+\caption{DDPG Critic Local Network}
 \end{figure}
-\FloatBarrier
-\begin{figure}[H!]
-\includegraphics[width=0.8\textwidth]{results/ddpg/run4/Rewards.png}
+
+\begin{figure}
+\label{DDPG_CriticTarget}
+\includegraphics[width=\textwidth]{results/ddpg/DDPG_critictg.png}
+\caption{DDPG Critic Target Network}
 \end{figure}
+
+
+
 \FloatBarrier
+\subsubsection{1000 Episodes}
 
-Due to the large number of networks used in DDPG, we were unable to achieve a success using this method. Indeed, of greatest interest is the fact that rewards tends to plummet after a few training runs. The author suspects that this is due to the neural network running through large amounts of  random torque movements to the robot walker causing it to fall down and effectively have a seizure. While the author anedotally saw occurrences of $R(t) \approx -5$ no succesful runs were completed using this methodology. 
+\begin{figure}
+\label{DDPG_1000Ep_Rewards}
+\includegraphics[width =\textwidth, height=0.4 \textheight]{results/ddpg/1000_ep/Rewards.png}
+\caption{Reward when DDPG is run for 1000 Episodes}
+\end{figure}
 
-In the future, the author would completely rewrite this script to use the Tensorflow 2.0 to save models. Once checkpointing begins, the author would suspect that various improvements could be done. 
+\begin{figure}
+\label{DDPG_1000Ep_Epsilon}
+\includegraphics[width =\textwidth, height=0.4 \textheight]{results/ddpg/1000_ep/Epsilon.png}
+\caption{Epislon when DDPG is run for 1000 Episodes}
+\end{figure}
+
+\FloatBarrier 
+
+\clearpage
+\subsection{Comparision of DQN vs. DDPG}
+The DDPG, while taking a lot more computational resources due to four different neural networks being utilized, does show steadier and more consistent results. While neither robotic walker completed the course, the DDPG walker had less \emph{very large} negative rewards (comparing figures \ref{DDPG_1000Ep_Rewards} vs \ref{DQN_1000Ep_Rewards}). This indicates that the LSTM used for action replay, as well as the critic network enabled a stabliization of the DDPG network that the DQN was otherwise unable to access. This can also be partially explained by the DQN using a more random $\epsilon$ rather than the smoothly-decaying $\epsilon$. We can see an extremely smooth graduation of the $\epsilon$ as seen in figure \ref{DDPG_1000Ep_Epsilon} versus figure \ref{DQN_1000Ep_Epsilon}. This implies that with sufficient computational power the DDPG would more smoothly get to a trained walker, as opposed to the DQN which has to rely much more on random exploration in order to determine an optimal strategy. 
+
+Where the two diverge more absolutely is the training time each took. While it is roughly difficult to compare the two due to training occurring on a shared cluster, we saw the following approximate results:
+
+\begin{tabular}{r||ll}
+\hline 
+\# Episodes & DQN & DDPG \\ 
+\hline 
+1000 &  \~ 20 minutes &  \~ 60 minutes \\ 
+5000 & \~ 40 minutes & • \\ 
+\hline
+\end{tabular} 
+
+
+The DDPG and DQN difference is not a linear difference, at least at the early stages but rather exponential. This is due to the DDPG using four different networks, the actor (agent) and critic (policy) networks, but also slowly decaying target networks for each. The DDPG also utilized a LSTM for the replay buffer, further increasing complexity as opposed to the DQN. 
+
+For future iterations of this project, with a much larger and distributed computing cluster, the author would likely go with a DDPG network. However, to improve performance, the author would create two hyperparameters, a $\gamma$ and $\gamma^{\prime}$ for the local and target networks, respectively. During early stages of training $\gamma$ should be extremely low in order to  ensure the agent can operate. However, as time goes on, we would increase $\gamma$ so that $\lim_{t \to \infty} \gamma = 0.99$ with the $\gamma^{\prime}$ parameter scaling similarly. This is to ensure that in the long-run and the agent approaches a successful completion, they become more cautious and maximize reward output. 
+
+
+
+
+\newpage 
+\section{Concluding Remarks}
+
+While we were ultimately unsuccessful  in getting the agent to complete the course, this research project was ultimately fruitful in understanding reinforcement learning, modifying code to successful execute reinforcement learning jobs, and yielding meaningful business value from future applications. 
+
+First, a brief reflection on the epistemology of reinforcement learning and data science. Reinforcement learning theory does not formally fit into the epistemology of data science but is ultimately a successful tool for application of data science. While data science is fundamentally an empirical science since it uses existing datasets to design a model to predict future values or labels, data science has historically used heuristics and rational approaches. For example, while many data scientists can design a relatively useful credit card transaction fraud model, it takes deep expertise in the credit card industry to yield a well-turned model that fully takes advantage of most features. Indeed, deep learning is an attempt to make data science even more empirical by building feature engineering into an automatic function. Reinforcement learning, in contrast relies entirely on an \emph{environment}, or a model of an environment in order to yield knowledge making it an entirely rational endeavor. Deep applications to reinforcement learning yield an even more rational discipline since data scientists are no longer focusing on $\gamma$ discounting, game theory, and other intersections of mathematics and economics and rather on providing the most optimal environment. Ultimately, reinforcement learning attempts to create \emph{actions} which is a truly unique knowledge outcome across all studies of human knowledge and wisdom. The author predicts this will ultimately yield a bifurcation between data scientists and nascent applications for reinforcement learning, where the skillets are similar but the theory of knowledge differs completely. 
+
+The author most regrets the lack of detailed coding for this practicum though still finds the experience rewarding. Ultimately, the base algorithms for DQN\citep{DQN_22} and DDPG\citep{DDPG} are open-sourced and implementations will not vary terribly much. As a result, the author largely took existing source code\footnote{https://github.com/Kyziridis/BipedalWalker-v2.git} and modified it to the needs of this project. This included the following items: \begin{enumerate*}
+\item Helper code to save videos, if possible;
+\item Tensorflow 1.0 vs. Tensorflow 2.0 compatibility, and;
+\item Modification of neural networks architecture.
+\end{enumerate*}. Unforunately item 1 become largely inapplicable due to XServer configurations and inability to complete the course and item 2 was enough to get everything running. Ultimately this left item 3 as the most significant place where modifications could happen. SIgnificant work was done on the DQN neural network with additional density layers and regularization, though this work was ultimately removed due to a corrupted save file (though the source still has these funtions). Much more substantial work was done on the DDPG, but ultimately the model would not compile in the Tensorflow space. The author wishes to see this project more as an operational and research project, and will likely create fresh code over time. 
+
+
+
+The business applications and value of reinforcement learning are potentially awesome. This is particularly true because business can be broken down into sub-components of reinforcement learning. A business will always have a state, either a balance sheet or a capture of the market, that can be encoded into reinforcement learning. Actions, or operations on their systems and proceses represents policy networks that we can train. Ultimately, since most profit functions from a business are necessarily convex (by standard definitions in economics) any business can use reinforcement learning to seek optimal market share in an arbitrary collection of other plays (the game), a market (the environment) and returns to their shareholders (the reward functions). Indeed, at the author's current company  we are already deep into the process of creating such a framework and have several research-partner institutions. The limiting factor is computational time. As the author experienced it takes a material investment in machines and power to yield a successful reinforcement learning model. 
+
+Reinforcement learning is best encoded as a multi-agent game across a complex environment, meaning that a quantum strategy may work best for a solution \citep{Meyer:1999vs, Guo:2008kd}. The environment can be thought of an arbitrarily complex quantum system with the reward function established as a measure of the energy state of the environment, or the Hamiltonian. Since $\dim(\mathcal{A})=24$ for this environment, and $\dim(\text{Agent}) = \dim(\text{Actor}) \oplus \dim(\text{Critic}) = 106497 + 72836 = 179833$ we get that $\dim(\hat{H}) = \dim(\mathcal{A}) \otimes \dim(\text{Agent})  \approx 4.3 \times 10 ^{6}$. Roughly speaking, a 4.3 Mega-Qubit computer could solve the Bipedal walker. While Quantum-Computing and the necessary computing power are likely decades off, the intersection of deep reinforcement learning and quantum-mechanics could create truly unique business the exhibit the first facets of Strong-AI. 
+
 
 
 \newpage
-\section{Concluding Remarks}
-
-
 \bibliographystyle{apacite}
 \cite{*}
 \bibliography{TarlerPracticuum}

@@ -1,9 +1,9 @@
 \begin{figure*}[hbt]
 \ifnextchar[{\eatarg}{}
-[H!]
+[H]
 \label{biped}
 \caption{Bipedal Walker Environment}
-\includegraphics[width = 0.8\textwidth]{bipedal.png}
+\includegraphics[width = 0.4\textwidth]{bipedal.png}
 \end{figure*}
 \begin{figure*}[hbt]
 \ifnextchar[{\eatarg}{}
@@ -13,11 +13,11 @@
 \end{figure*}
 \begin{figure*}[hbt]
 \ifnextchar[{\eatarg}{}
-[H!]
-\includegraphics[width=0.8\textwidth]{results/ddpg/run4/mean_100.png}
+[H]
+\includegraphics[width=0.45\textwidth]{results/ddpg/run4/mean_100.png}
 \end{figure*}
 \begin{figure*}[hbt]
 \ifnextchar[{\eatarg}{}
-[H!]
-\includegraphics[width=0.8\textwidth]{results/ddpg/run4/Rewards.png}
+[H]
+\includegraphics[width=0.45\textwidth]{results/ddpg/run4/Rewards.png}
 \end{figure*}

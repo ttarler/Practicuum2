@@ -1,12 +1,15 @@
-\contentsline {section}{\normalfont {Deep Reinfocrcement Learning: Application of DQN and DDG to the Bipedal Walker Problem}}{2}{section*.1}%
-\contentsline {section}{Theory}{5}{section*.3}%
-\contentsline {subsection}{Reinforcement Learning}{5}{section*.4}%
-\contentsline {subsection}{Deep Q-Networks}{7}{section*.5}%
-\contentsline {subsection}{Deep Deterministic Policy Networks}{10}{section*.6}%
-\contentsline {section}{Bipedal Walker}{14}{section*.7}%
-\contentsline {section}{Results}{17}{section*.8}%
-\contentsline {subsection}{Methodology}{17}{section*.9}%
-\contentsline {subsection}{DQN}{17}{section*.10}%
-\contentsline {subsection}{DDPG}{18}{section*.11}%
-\contentsline {section}{Concluding Remarks}{25}{section*.12}%
-\contentsline {section}{References}{26}{section*.13}%
+\contentsline {section}{Theory}{6}{section*.3}%
+\contentsline {subsection}{Reinforcement Learning}{7}{section*.4}%
+\contentsline {subsection}{Deep Q-Networks}{8}{section*.5}%
+\contentsline {subsection}{Deep Deterministic Policy Networks}{11}{section*.6}%
+\contentsline {section}{Bipedal Walker}{16}{section*.7}%
+\contentsline {section}{Results}{20}{section*.9}%
+\contentsline {subsection}{Methodology}{20}{section*.10}%
+\contentsline {subsection}{DQN}{20}{section*.11}%
+\contentsline {subsubsection}{1000 Episodes}{22}{figure.caption.16}%
+\contentsline {subsubsection}{5000 Episodes}{23}{figure.caption.20}%
+\contentsline {subsection}{DDPG}{25}{section*.21}%
+\contentsline {subsubsection}{1000 Episodes}{30}{figure.caption.28}%
+\contentsline {subsection}{Comparision of DQN vs. DDPG}{32}{section*.29}%
+\contentsline {section}{Concluding Remarks}{34}{section*.30}%
+\contentsline {section}{References}{37}{section*.31}%

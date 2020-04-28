@@ -2,14 +2,8 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Apr 25 20:41:53 2018
-Modified on May 3rd, 2020
+
 @author: dead
-Modified by: Thomas Tarler
-Changes Made: updated helper functions for plotting, recording of results. 
-Slight adjustments to neural architecture. 
-Enabled video recording on certain systems
-Enabled "non-interactive" backend for plots
-Other minor bug fixes
 """
 
 #from __future__ import print_function

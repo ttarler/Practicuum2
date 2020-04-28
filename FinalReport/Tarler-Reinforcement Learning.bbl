@@ -1,6 +1,112 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+Chen%
+\ \BBA {} Wang%
+}{%
+Chen%
+\ \BBA {} Wang%
+}{%
+{\protect \APACyear {2008}}%
+}]{%
+chen2008promotion}
+\APACinsertmetastar {%
+chen2008promotion}%
+\begin{APACrefauthors}%
+Chen, X.%
+\BCBT {}\ \BBA {} Wang, L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2008}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Promotion of cooperation induced by appropriate payoff
+  aspirations in a small-world networked game} {Promotion of cooperation
+  induced by appropriate payoff aspirations in a small-world networked
+  game}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Physical Review E}{77}{1}{017103}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Fu%
+, Liu%
+\BCBL {}\ \BBA {} Wang%
+}{%
+Fu%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2007}}%
+}]{%
+fu2007evolutionary}
+\APACinsertmetastar {%
+fu2007evolutionary}%
+\begin{APACrefauthors}%
+Fu, F.%
+, Liu, L\BHBI H.%
+\BCBL {}\ \BBA {} Wang, L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2007}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Evolutionary prisoner's dilemma on heterogeneous
+  Newman-Watts small-world network} {Evolutionary prisoner's dilemma on
+  heterogeneous newman-watts small-world network}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The European Physical Journal B}{56}{4}{367--372}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Grabbe%
+}{%
+Grabbe%
+}{%
+{\protect \APACyear {2005}}%
+}]{%
+Grabbe:2005}
+\APACinsertmetastar {%
+Grabbe:2005}%
+\begin{APACrefauthors}%
+Grabbe, J\BPBI O.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2005}{{\APACmonth{04}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {An Introduction to Quantum Game Theory} {An introduction
+  to quantum game theory}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Arxiv: Quantum Physics}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Guo%
+, Zhang%
+\BCBL {}\ \BBA {} Koehler%
+}{%
+Guo%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2008}}%
+}]{%
+Guo:2008kd}
+\APACinsertmetastar {%
+Guo:2008kd}%
+\begin{APACrefauthors}%
+Guo, H.%
+, Zhang, J.%
+\BCBL {}\ \BBA {} Koehler, G\BPBI J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2008}{{\APACmonth{12}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{A survey of quantum games}} {{A survey of quantum
+  games}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Decision Support Systems}{46}{1}{318--332}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Lillicrap%
 \ \protect \BOthers {.}}{%
 Lillicrap%
@@ -25,6 +131,28 @@ Lillicrap, T\BPBI P.%
 \newblock
 \APACrefbtitle {Continuous control with deep reinforcement learning.}
   {Continuous control with deep reinforcement learning.}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Meyer%
+}{%
+Meyer%
+}{%
+{\protect \APACyear {1999}}%
+}]{%
+Meyer:1999vs}
+\APACinsertmetastar {%
+Meyer:1999vs}%
+\begin{APACrefauthors}%
+Meyer, D\BPBI A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1999}{{\APACmonth{02}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Quantum Strategies}} {{Quantum Strategies}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Physical Review Letters}{82}{5}{1052--1055}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%

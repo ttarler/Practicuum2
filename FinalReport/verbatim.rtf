@@ -1,0 +1,213 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2512
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;\f1\fmodern\fcharset0 Courier-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue192;\red0\green0\blue0;\red135\green59\blue3;
+}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c80000;\cssrgb\c0\c0\c0;\cssrgb\c60392\c30196\c0;
+}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \\begin\cf3 \strokec3 \{verbatim\}\
+\
+\
+\cf4 \strokec4 Model: "\ul sequential_1\ulnone "\cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 _________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \strokec4 Layer (type)                 Output Shape              \ul Param\ulnone  #   \cf3 \strokec3 \
+\cf4 \strokec4 =================================================================\cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dense_1\ulnone  (Dense)              (None, 2500)              62500     \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 _________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dense_2\ulnone  (Dense)              (None, 2000)              5002000   \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 _________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dropout_1\ulnone  (Dropout)          (None, 2000)              0         \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 _________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dense_3\ulnone  (Dense)              (None, 1500)              3001500   \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 _________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dense_4\ulnone  (Dense)              (None, 4)                 6004      \cf3 \strokec3 \
+\cf4 \strokec4 =================================================================\cf3 \strokec3 \
+\cf4 \strokec4 Total \ul params\ulnone : 8,072,004\cf3 \strokec3 \
+\cf4 \strokec4 Trainable \ul params\ulnone : 8,072,004\cf3 \strokec3 \
+\cf4 \strokec4 Non-trainable \ul params\ulnone : 0\cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 _________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \strokec4 None\cf3 \strokec3 \
+\cf4 \strokec4 -----------------------------------\cf3 \strokec3 \
+\cf4 \strokec4 Environment \ul Observation_space\ulnone :  Box(24,)\cf3 \strokec3 \
+\cf4 \strokec4 Environment \ul Action_space\ulnone :  Box(4,)\cf3 \strokec3 \
+\cf4 \strokec4 -----------------------------------\cf3 \strokec3 \
+\cf2 \strokec2 \\end\cf3 \strokec3 \{verbatim\}\
+\pard\pardeftab720\partightenfactor0
+\cf2 \strokec2 \
+\
+\\begin\cf3 \strokec3 \{verbatim\}\cf4 \strokec4  \\
+\f1\b \cf2 \strokec2 label\{\ul ActorNN\ulnone \}
+\f0\b0 \cf3 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \ul \ulc4 \strokec4 _________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \strokec4 Layer (type)                    Output Shape         \ul Param\ulnone  #     Connected to                     \cf3 \strokec3 \
+\cf4 \strokec4 ==================================================================================================\cf3 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \ul \ulc4 \strokec4 input_3\ulnone  (\ul InputLayer\ulnone )            (None, 10)           0                                            \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 input_4\ulnone  (\ul InputLayer\ulnone )            (None, 14)           0                                            \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dense_1\ulnone  (Dense)                 (None, 256)          2816        \ul input_3\ulnone [0][0]                    \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dense_2\ulnone  (Dense)                 (None, 256)          3840        \ul input_4\ulnone [0][0]                    \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dropout_1\ulnone  (Dropout)             (None, 256)          0           \ul dense_1\ulnone [0][0]                    \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 gaussian_noise_1\ulnone  (\ul GaussianNoise\ulnone  (None, 256)          0           \ul dense_2\ulnone [0][0]                    \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 concatenate_1\ulnone  (Concatenate)     (None, 512)          0           \ul dropout_1\ulnone [0][0]                  \cf3 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \strokec4                                                                  \ul gaussian_noise_1\ulnone [0][0]           \cf3 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dense_3\ulnone  (Dense)                 (None, 128)          65664       \ul concatenate_1\ulnone [0][0]              \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dense_4\ulnone  (Dense)                 (None, 4)            516         \ul dense_3\ulnone [0][0]                    \cf3 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \strokec4 ==================================================================================================\cf3 \strokec3 \
+\cf4 \strokec4 Total \ul params\ulnone : 72,836\cf3 \strokec3 \
+\cf4 \strokec4 Trainable \ul params\ulnone : 72,836\cf3 \strokec3 \
+\cf4 \strokec4 Non-trainable \ul params\ulnone : 0\cf3 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \strokec4 Actor None\cf3 \strokec3 \
+\cf4 \strokec4 Model: "\ul model_2\ulnone "\cf3 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \strokec4 Layer (type)                    Output Shape         \ul Param\ulnone  #     Connected to                     \cf3 \strokec3 \
+\cf4 \strokec4 ==================================================================================================\cf3 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \ul \ulc4 \strokec4 input_7\ulnone  (\ul InputLayer\ulnone )            (None, 10)           0                                            \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 input_8\ulnone  (\ul InputLayer\ulnone )            (None, 14)           0                                            \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dense_5\ulnone  (Dense)                 (None, 256)          2816        \ul input_7\ulnone [0][0]                    \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dense_6\ulnone  (Dense)                 (None, 256)          3840        \ul input_8\ulnone [0][0]                    \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dropout_2\ulnone  (Dropout)             (None, 256)          0           \ul dense_5\ulnone [0][0]                    \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 gaussian_noise_2\ulnone  (\ul GaussianNoise\ulnone  (None, 256)          0           \ul dense_6\ulnone [0][0]                    \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 concatenate_2\ulnone  (Concatenate)     (None, 512)          0           \ul dropout_2\ulnone [0][0]                  \cf3 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \strokec4                                                                  \ul gaussian_noise_2\ulnone [0][0]           \cf3 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dense_7\ulnone  (Dense)                 (None, 128)          65664       \ul concatenate_2\ulnone [0][0]              \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dense_8\ulnone  (Dense)                 (None, 4)            516         \ul dense_7\ulnone [0][0]                    \cf3 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \strokec4 ==================================================================================================\cf3 \strokec3 \
+\cf4 \strokec4 Total \ul params\ulnone : 72,836\cf3 \strokec3 \
+\cf4 \strokec4 Trainable \ul params\ulnone : 72,836\cf3 \strokec3 \
+\cf4 \strokec4 Non-trainable \ul params\ulnone : 0\cf3 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \strokec4 Actor None\cf3 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \ul \ulc4 \strokec4 ddpg_batch\ulnone .\ul py\ulnone :228: \ul UserWarning\ulnone : Update your `Model` call to the \ul Keras\ulnone  2 \ul API\ulnone : `Model(inputs=[<\ul tf\ulnone .\ul Tenso\ulnone ..., outputs=Tensor("\ul de\ulnone ...)`\cf3 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \strokec4   model  = Model(input=[\ul lidar_input\ulnone ,\ul state_input\ulnone ,\ul action_input\ulnone ], output=output)\cf3 \strokec3 \
+\cf4 \strokec4 Model: "\ul model_3\ulnone "\cf3 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \strokec4 Layer (type)                    Output Shape         \ul Param\ulnone  #     Connected to                     \cf3 \strokec3 \
+\cf4 \strokec4 ==================================================================================================\cf3 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \ul \ulc4 \strokec4 input_9\ulnone  (\ul InputLayer\ulnone )            (None, 10)           0                                            \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 input_10\ulnone  (\ul InputLayer\ulnone )           (None, 14)           0                                            \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dense_9\ulnone  (Dense)                 (None, 256)          2816        \ul input_9\ulnone [0][0]                    \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dense_10\ulnone  (Dense)                (None, 256)          3840        \ul input_10\ulnone [0][0]                   \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 input_11\ulnone  (\ul InputLayer\ulnone )           (None, 4)            0                                            \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dropout_3\ulnone  (Dropout)             (None, 256)          0           \ul dense_9\ulnone [0][0]                    \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dropout_4\ulnone  (Dropout)             (None, 256)          0           \ul dense_10\ulnone [0][0]                   \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dense_11\ulnone  (Dense)                (None, 256)          1280        \ul input_11\ulnone [0][0]                   \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 concatenate_3\ulnone  (Concatenate)     (None, 512)          0           \ul dropout_3\ulnone [0][0]                  \cf3 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \strokec4                                                                  \ul dropout_4\ulnone [0][0]                  \cf3 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dropout_5\ulnone  (Dropout)             (None, 256)          0           \ul dense_11\ulnone [0][0]                   \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 concatenate_4\ulnone  (Concatenate)     (None, 768)          0           \ul concatenate_3\ulnone [0][0]              \cf3 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \strokec4                                                                  \ul dropout_5\ulnone [0][0]                  \cf3 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dense_12\ulnone  (Dense)                (None, 128)          98432       \ul concatenate_4\ulnone [0][0]              \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dropout_6\ulnone  (Dropout)             (None, 128)          0           \ul dense_12\ulnone [0][0]                   \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dense_13\ulnone  (Dense)                (None, 1)            129         \ul dropout_6\ulnone [0][0]                  \cf3 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \strokec4 ==================================================================================================\cf3 \strokec3 \
+\cf4 \strokec4 Total \ul params\ulnone : 106,497\cf3 \strokec3 \
+\cf4 \strokec4 Trainable \ul params\ulnone : 106,497\cf3 \strokec3 \
+\cf4 \strokec4 Non-trainable \ul params\ulnone : 0\cf3 \strokec3 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \strokec2 \\end\cf3 \strokec3 \{verbatim\}\
+\
+\pard\pardeftab720\partightenfactor0
+\cf2 \strokec2 \\begin\cf3 \strokec3 \{verbatim\}\
+\cf4 \strokec4 Critic None\cf3 \strokec3 \
+\cf4 \strokec4 Model: "\ul model_4\ulnone "\cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \strokec4 Layer (type)                    Output Shape         \ul Param\ulnone  #     Connected to                     \cf3 \strokec3 \
+\cf4 \strokec4 ==================================================================================================\cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 input_12\ulnone  (\ul InputLayer\ulnone )           (None, 10)           0                                            \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 input_13\ulnone  (\ul InputLayer\ulnone )           (None, 14)           0                                            \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dense_14\ulnone  (Dense)                (None, 256)          2816        \ul input_12\ulnone [0][0]                   \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dense_15\ulnone  (Dense)                (None, 256)          3840        \ul input_13\ulnone [0][0]                   \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 input_14\ulnone  (\ul InputLayer\ulnone )           (None, 4)            0                                            \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dropout_7\ulnone  (Dropout)             (None, 256)          0           \ul dense_14\ulnone [0][0]                   \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dropout_8\ulnone  (Dropout)             (None, 256)          0           \ul dense_15\ulnone [0][0]                   \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dense_16\ulnone  (Dense)                (None, 256)          1280        \ul input_14\ulnone [0][0]                   \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 concatenate_5\ulnone  (Concatenate)     (None, 512)          0           \ul dropout_7\ulnone [0][0]                  \cf3 \strokec3 \
+\cf4 \strokec4                                                                  \ul dropout_8\ulnone [0][0]                  \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dropout_9\ulnone  (Dropout)             (None, 256)          0           \ul dense_16\ulnone [0][0]                   \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 concatenate_6\ulnone  (Concatenate)     (None, 768)          0           \ul concatenate_5\ulnone [0][0]              \cf3 \strokec3 \
+\cf4 \strokec4                                                                  \ul dropout_9\ulnone [0][0]                  \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dense_17\ulnone  (Dense)                (None, 128)          98432       \ul concatenate_6\ulnone [0][0]              \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dropout_10\ulnone  (Dropout)            (None, 128)          0           \ul dense_17\ulnone [0][0]                   \cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \ul \ulc4 \strokec4 dense_18\ulnone  (Dense)                (None, 1)            129         \ul dropout_10\ulnone [0][0]                 \cf3 \strokec3 \
+\cf4 \strokec4 ==================================================================================================\cf3 \strokec3 \
+\cf4 \strokec4 Total \ul params\ulnone : 106,497\cf3 \strokec3 \
+\cf4 \strokec4 Trainable \ul params\ulnone : 106,497\cf3 \strokec3 \
+\cf4 \strokec4 Non-trainable \ul params\ulnone : 0\cf3 \strokec3 \
+\cf4 \ul \ulc4 \strokec4 __________________________________________________________________________________________________\cf3 \ulnone \strokec3 \
+\cf4 \strokec4 Critic None\cf3 \strokec3 \
+\cf2 \strokec2 \\end\cf3 \strokec3 \{verbatim\} \
+\pard\pardeftab720\partightenfactor0
+\cf3 \
+}
