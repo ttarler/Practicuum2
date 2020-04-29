@@ -1,14 +1,16 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces Bipedal Walker Environment\relax }}{19}{figure.caption.8}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Neural Architecture of the DQN Model used for training\relax }}{21}{figure.caption.12}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Loss and Error when DQN is run for 1000 Episodes\relax }}{22}{figure.caption.14}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Reward when DQN is run for 1000 Episodes\relax }}{22}{figure.caption.15}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Epislon when DQN is run for 1000 Episodes\relax }}{23}{figure.caption.16}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Loss and Error when DQN is run for 5000 Episodes\relax }}{24}{figure.caption.18}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Reward when DQN is run for 5000 Episodes\relax }}{24}{figure.caption.19}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Epislon when DQN is run for 5000 Episodes\relax }}{25}{figure.caption.20}%
-\contentsline {figure}{\numberline {9}{\ignorespaces DDPG Actor Local Network\relax }}{26}{figure.caption.22}%
-\contentsline {figure}{\numberline {10}{\ignorespaces DDPG Actor Target Network\relax }}{27}{figure.caption.23}%
-\contentsline {figure}{\numberline {11}{\ignorespaces DDPG Critic Local Network\relax }}{28}{figure.caption.24}%
-\contentsline {figure}{\numberline {12}{\ignorespaces DDPG Critic Target Network\relax }}{29}{figure.caption.25}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Reward when DDPG is run for 1000 Episodes\relax }}{30}{figure.caption.27}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Epislon when DDPG is run for 1000 Episodes\relax }}{31}{figure.caption.28}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Bipedal Walker Environment\relax }}{12}{figure.caption.8}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Neural Architecture of the DQN Model used for training\relax }}{14}{figure.caption.12}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Loss and Error when DQN is run for 1000 Episodes\relax }}{15}{figure.caption.14}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Reward when DQN is run for 1000 Episodes\relax }}{15}{figure.caption.15}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Epislon when DQN is run for 1000 Episodes\relax }}{16}{figure.caption.16}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Loss and Error when DQN is run for 5000 Episodes\relax }}{17}{figure.caption.18}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Reward when DQN is run for 5000 Episodes\relax }}{17}{figure.caption.19}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Epsilon when DQN is run for 5000 Episodes\relax }}{18}{figure.caption.20}%
+\contentsline {figure}{\numberline {9}{\ignorespaces DDPG Actor Local Network\relax }}{19}{figure.caption.22}%
+\contentsline {figure}{\numberline {10}{\ignorespaces DDPG Actor Target Network\relax }}{20}{figure.caption.23}%
+\contentsline {figure}{\numberline {11}{\ignorespaces DDPG Critic Local Network\relax }}{21}{figure.caption.24}%
+\contentsline {figure}{\numberline {12}{\ignorespaces DDPG Critic Target Network\relax }}{22}{figure.caption.25}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Reward when DDPG is run for 1000 Episodes\relax }}{23}{figure.caption.27}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Epislon when DDPG is run for 1000 Episodes\relax }}{24}{figure.caption.28}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Reward when DDPG is run for 5000 Episodes\relax }}{25}{figure.caption.30}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Epislon when DDPG is run for 5000 Episodes\relax }}{25}{figure.caption.31}%

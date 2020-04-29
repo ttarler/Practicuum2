@@ -10,16 +10,16 @@ This is the reposository for Thomas Tarler's practicuum 2 in reinforcement learn
 
 
 2. DDPG Architecture
-    a. ![Actor Local](FinalReport/results/ddpg/DDDG_Actorlc.png)
+    a. ![Actor Local](FinalReport/results/ddpg/DDPG_Actorlc.png)
 
 
     b. ![Actor Target](FinalReport/results/ddpg/DDPG_Actortg.png)
 
 
-    c. ![Critic Local](FinalReport/results/ddpg/DDPG_crticlc.png)
+    c. ![Critic Local](FinalReport/results/ddpg/DDPG_critictlc.png)
 
 
-    d. ![Critic Target](FinalReport/results/ddpg/DDPG_crticlc.png)
+    d. ![Critic Target](FinalReport/results/ddpg/DDPG_critictg.png)
 
 
 
