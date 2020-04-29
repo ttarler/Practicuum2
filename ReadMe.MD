@@ -7,18 +7,18 @@ This is the reposository for Thomas Tarler's practicuum 2 in reinforcement learn
 
 **Final Neural Networks:**
 1. DQN Architecture
-!(/FinalReport/results/dqn/DQN_Model.png)
+!(FinalReport/results/dqn/DQN_Model.png)
 
 
 2. DDPG Architecture
     a. Actor Local
-    !(/FinalReport/results/ddpg/DDDPG_Actorlc.png)
+    !(FinalReport/results/ddpg/DDDPG_Actorlc.png)
     b. Actor Target
-    !(/FinalReport/results/ddpg/DDDPG_Actortg.png)
+    !(FinalReport/results/ddpg/DDDPG_Actortg.png)
     c. Critic Local
-    !(/FinalReport/results/ddpg/DDDPG_crticlc.png)
-    d.
-    !(/FinalReport/results/ddpg/DDDPG_crticlc.png)
+    !(FinalReport/results/ddpg/DDDPG_crticlc.png)
+    d. Critic Target
+    !(FinalReport/results/ddpg/DDDPG_crticlc.png)
 
 **To Run Scripts**
 1. Zip and upload `DDPG` or `DQN` to the multiprocessing cluster of your choice. Must have the following:
