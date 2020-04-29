@@ -67,7 +67,7 @@ Finally, we need the environment or the model of an environment.  The environmen
 Deep Q-Networks are a variation on Q-Learning and so we will explain Q-Learning first. Q-learning is explicitly \emph{model-free} meaning that no agent encodes a model of the environment they are working on, Instead each state is considered to be a step in a Markov Chain, so that the state can always be calculated using the last observation. Q-learning attempts to determine an optimal policy $Q$ for a given agent and action-state combination. Note that each action-state must be discrete and enumerated, meaning we can associated indices $i, j \in \mathbb{N}$ with every action state, and the size of Q-Learning is $i \cdot j$. We first need to define the valuation function as 
 \begin{equation} 
 \label{bellman}
-Q^{\prime}(s_{t}, a_{t}) \leftarrow Q(s_{t}, a_{t}) + \alpha \cdot r_{t} + \gamma \cdot \max_{\alpha} Q(s_{t+1}, a_{t}) - Q(s_{t}, a_{t}))  
+Q^{\prime}(s_{t}, a_{t}) \leftarrow Q(s_{t}, a_{t}) + \alpha \cdot \left( r_{t} + \gamma \cdot \max_{\alpha} Q(s_{t+1}, a_{t}) - Q(s_{t}, a_{t}) \right)
 \end{equation}  where $Q^{\prime}$ is the updated policy, $\gamma \in \mathbb{R} \cap [0,1]$ is the \emph{discount} rate (or how much the model discount future values to the prevent), $\alpha \in \mathbb{R} \cap [0,1]$ is the \emph{learning rate} (how much the model learns from past actions) and $r_{t}$ is the present reward at time $t$.  Necessarily, setting $\gamma$ low means the model does not discount future actions as much and disregards actions that may improve its current state for a longer-term reward. Conversely, setting $\gamma$ high means future actions are heavility discounted and the model becomes greedy. When we set $\alpha$ to a low value, the model with not learn as much from its future actions and will bias itself towards using past, successful actions. When $\alpha$ is high, the model will learn more. A final variable that is vital is $\epsilon \in \mathbb{R} \cap [0,1]$ or the experimentation rate. If $\epsilon$ is high, the model will chose to undertake a completely random action more frequently rather than some policy it has already learned to be successful. 
 
 Equation \ref{bellman} is the cost function traditionally used in both Q-Learning and Deep-Variants. It is known as the Bellman equation. 
@@ -171,7 +171,6 @@ Target Network updates are then performed where we take a copy of $\theta^{Q}$ a
 
 The final important aspect is exploration. In discrete reinforcement learning problems, we can chose a random action $a_{i}$ from the action space whenever $\epsilon_{i} < \epsilon$. This is important to learn new actions. However in a continuos action space, we instead want to inject random noise into an action. For example, moving a joint just slightly harder. DDPG networks use the \emph{Urnstein-Uhlenbeck Process} for the noise to ensure that it does not cancel an action. This process is \[ \mu ^{\prime}(s_{t}) = \mu( s_{t} \vert \theta^{\mu}_{t}) + \mathcal{N}\]
 
-\FloatBarrier
 
 
 \newpage

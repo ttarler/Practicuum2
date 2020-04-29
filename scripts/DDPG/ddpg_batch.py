@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Apr 25 20:41:53 2018
-Original Repo: https://github.com/Kyziridis/BipedalWalker-v2.git
+
 @Modified on May 3rd, 2020
 @author: dead
 Modified by: Thomas Tarler

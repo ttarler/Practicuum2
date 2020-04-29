@@ -2,23 +2,18 @@ This is the reposository for Thomas Tarler's practicuum 2 in reinforcement learn
 
 **Directory**
 1. Final Report: Latex documents with final results.
-2. ![FinalReport]!(FinalReport/Tarler-Reinforcement Learning.pdf): (**Note to instructor:**) Use this PDF when evaluating writeup, as the ```ReadMe.MD``` is rather sparse 
+2. ![FinalReport](FinalReport/Tarler-Reinforcement\ Learning.pdf): (**Note to instructor:**) Use this PDF when evaluating writeup, as the ```ReadMe.MD``` is rather sparse 
 3. scripts: Scripts that can be run on a Python cluster to determine final results
 
 **Final Neural Networks:**
-1. DQN Architecture
-!(FinalReport/results/dqn/DQN_Model.png)
+1. ![DQN Architecture](FinalReport/results/dqn/DQN_Model.png)
 
 
 2. DDPG Architecture
-    a. Actor Local
-    !(FinalReport/results/ddpg/DDDPG_Actorlc.png)
-    b. Actor Target
-    !(FinalReport/results/ddpg/DDDPG_Actortg.png)
-    c. Critic Local
-    !(FinalReport/results/ddpg/DDDPG_crticlc.png)
-    d. Critic Target
-    !(FinalReport/results/ddpg/DDDPG_crticlc.png)
+    a. ![Actor Local](FinalReport/results/ddpg/DDDG_Actorlc.png)
+    b. ![Actor Target](FinalReport/results/ddpg/DDPG_Actortg.png)
+    c. ![Critic Local](FinalReport/results/ddpg/DDPG_crticlc.png)
+    d. ![Critic Target](FinalReport/results/ddpg/DDPG_crticlc.png)
 
 **To Run Scripts**
 1. Zip and upload `DDPG` or `DQN` to the multiprocessing cluster of your choice. Must have the following:
