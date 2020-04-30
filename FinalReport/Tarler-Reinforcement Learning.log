@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  29 APR 2020 10:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.30)  30 APR 2020 09:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **"Tarler-Reinforcement Learning.tex"
 (./Tarler-Reinforcement Learning.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-03-06>
+L3 programming layer <2020-04-06>
 (/usr/local/texlive/2020/texmf-dist/tex/latex/apa6/apa6.cls
 Document Class: apa6 2020/01/13 v2.34 APA formatting (6th edition)
 (/usr/local/texlive/2020/texmf-dist/tex/latex/base/article.cls
@@ -672,208 +672,159 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [8]
 [9] [10] [11]
-
-Package caption Warning: \label without proper reference on input line 229.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `biped' on page 12 undefined on input line 226.
-
-<bipedal.png, id=205, 597.23125pt x 400.49625pt>
+<bipedal.png, id=206, 597.23125pt x 400.49625pt>
 File: bipedal.png Graphic file (type png)
 <use bipedal.png>
 Package pdftex.def Info: bipedal.png  used on input line 231.
 (pdftex.def)             Requested size: 433.62pt x 290.78317pt.
-[12 <./bipedal.png>]
+ [12 <./bipedal.png>]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-43.
- (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ts1lmr.fd
+44.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 245.
+(Font)              <10> on input line 246.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 245.
+(Font)              <7> on input line 246.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 245.
-
-
-Package caption Warning: \label without proper reference on input line 251.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `DQN_Architecture' on page 13 undefined on input line 
-248.
-
-<results/dqn/DQN_Model.png, id=214, 411.5375pt x 613.29124pt>
+(Font)              <5> on input line 246.
+<results/dqn/DQN_Model.png, id=216, 411.5375pt x 613.29124pt>
 File: results/dqn/DQN_Model.png Graphic file (type png)
 <use results/dqn/DQN_Model.png>
-Package pdftex.def Info: results/dqn/DQN_Model.png  used on input line 252.
+Package pdftex.def Info: results/dqn/DQN_Model.png  used on input line 253.
 (pdftex.def)             Requested size: 433.62pt x 646.20201pt.
 
-LaTeX Warning: Float too large for page by 46.407pt on input line 254.
+
+LaTeX Warning: Float too large for page by 46.407pt on input line 256.
 
 [13
 
 ] [14 <./results/dqn/DQN_Model.png>]
-<results/dqn/1000_ep/Error.png, id=231, 462.528pt x 346.896pt>
+<results/dqn/1000_ep/Error.png, id=233, 462.528pt x 346.896pt>
 File: results/dqn/1000_ep/Error.png Graphic file (type png)
 <use results/dqn/1000_ep/Error.png>
-Package pdftex.def Info: results/dqn/1000_ep/Error.png  used on input line 260.
+Package pdftex.def Info: results/dqn/1000_ep/Error.png  used on input line 262.
 
 (pdftex.def)             Requested size: 433.64009pt x 245.71562pt.
-<results/dqn/1000_ep/Rewards.png, id=232, 462.528pt x 346.896pt>
+<results/dqn/1000_ep/Rewards.png, id=234, 462.528pt x 346.896pt>
 File: results/dqn/1000_ep/Rewards.png Graphic file (type png)
 <use results/dqn/1000_ep/Rewards.png>
 Package pdftex.def Info: results/dqn/1000_ep/Rewards.png  used on input line 26
-6.
+8.
 (pdftex.def)             Requested size: 433.64009pt x 245.71562pt.
-<results/dqn/1000_ep/Epsilon.png, id=233, 462.528pt x 346.896pt>
+<results/dqn/1000_ep/Epsilon.png, id=235, 462.528pt x 346.896pt>
 File: results/dqn/1000_ep/Epsilon.png Graphic file (type png)
 <use results/dqn/1000_ep/Epsilon.png>
 Package pdftex.def Info: results/dqn/1000_ep/Epsilon.png  used on input line 27
-2.
+5.
 (pdftex.def)             Requested size: 433.64009pt x 245.71562pt.
  [15 <./results/dqn/1000_ep/Error.png> <./results/dqn/1000_ep/Rewards.png>]
-<results/dqn/5000_ep/Error.png, id=241, 462.528pt x 346.896pt>
+<results/dqn/5000_ep/Error.png, id=243, 462.528pt x 346.896pt>
 File: results/dqn/5000_ep/Error.png Graphic file (type png)
 <use results/dqn/5000_ep/Error.png>
-Package pdftex.def Info: results/dqn/5000_ep/Error.png  used on input line 280.
+Package pdftex.def Info: results/dqn/5000_ep/Error.png  used on input line 284.
 
 (pdftex.def)             Requested size: 433.64009pt x 245.71562pt.
-<results/dqn/5000_ep/Rewards.png, id=242, 462.528pt x 346.896pt>
+<results/dqn/5000_ep/Rewards.png, id=244, 462.528pt x 346.896pt>
 File: results/dqn/5000_ep/Rewards.png Graphic file (type png)
 <use results/dqn/5000_ep/Rewards.png>
-Package pdftex.def Info: results/dqn/5000_ep/Rewards.png  used on input line 28
-6.
+Package pdftex.def Info: results/dqn/5000_ep/Rewards.png  used on input line 29
+0.
 (pdftex.def)             Requested size: 433.64009pt x 245.71562pt.
-<results/dqn/5000_ep/Epsilon.png, id=243, 462.528pt x 346.896pt>
+<results/dqn/5000_ep/Epsilon.png, id=245, 462.528pt x 346.896pt>
 File: results/dqn/5000_ep/Epsilon.png Graphic file (type png)
 <use results/dqn/5000_ep/Epsilon.png>
 Package pdftex.def Info: results/dqn/5000_ep/Epsilon.png  used on input line 29
-2.
+6.
 (pdftex.def)             Requested size: 433.64009pt x 245.71562pt.
  [16 <./results/dqn/1000_ep/Epsilon.png>]
 [17 <./results/dqn/5000_ep/Error.png> <./results/dqn/5000_ep/Rewards.png>]
-<results/ddpg/DDPG_Actorlc.png, id=257, 747.79375pt x 721.69624pt>
+<results/ddpg/DDPG_Actorlc.png, id=259, 747.79375pt x 721.69624pt>
 File: results/ddpg/DDPG_Actorlc.png Graphic file (type png)
 <use results/ddpg/DDPG_Actorlc.png>
-Package pdftex.def Info: results/ddpg/DDPG_Actorlc.png  used on input line 315.
+Package pdftex.def Info: results/ddpg/DDPG_Actorlc.png  used on input line 319.
 
 (pdftex.def)             Requested size: 433.62pt x 418.485pt.
-<results/ddpg/DDPG_Actortg.png, id=258, 747.79375pt x 721.69624pt>
+<results/ddpg/DDPG_Actortg.png, id=260, 747.79375pt x 721.69624pt>
 File: results/ddpg/DDPG_Actortg.png Graphic file (type png)
 <use results/ddpg/DDPG_Actortg.png>
-Package pdftex.def Info: results/ddpg/DDPG_Actortg.png  used on input line 322.
+Package pdftex.def Info: results/ddpg/DDPG_Actortg.png  used on input line 326.
 
 (pdftex.def)             Requested size: 433.62pt x 418.485pt.
-<results/ddpg/DDPG_critictlc.png, id=259, 1191.45125pt x 830.10126pt>
+<results/ddpg/DDPG_critictlc.png, id=261, 1191.45125pt x 830.10126pt>
 File: results/ddpg/DDPG_critictlc.png Graphic file (type png)
 <use results/ddpg/DDPG_critictlc.png>
-Package pdftex.def Info: results/ddpg/DDPG_critictlc.png  used on input line 32
-8.
+Package pdftex.def Info: results/ddpg/DDPG_critictlc.png  used on input line 33
+2.
 (pdftex.def)             Requested size: 433.62pt x 302.10414pt.
-<results/ddpg/DDPG_critictg.png, id=260, 1193.45876pt x 830.10126pt>
+<results/ddpg/DDPG_critictg.png, id=262, 1193.45876pt x 830.10126pt>
 File: results/ddpg/DDPG_critictg.png Graphic file (type png)
 <use results/ddpg/DDPG_critictg.png>
-Package pdftex.def Info: results/ddpg/DDPG_critictg.png  used on input line 334
+Package pdftex.def Info: results/ddpg/DDPG_critictg.png  used on input line 338
 .
 (pdftex.def)             Requested size: 433.62pt x 301.59749pt.
 
 [18 <./results/dqn/5000_ep/Epsilon.png>] [19 <./results/ddpg/DDPG_Actorlc.png>]
 [20 <./results/ddpg/DDPG_Actortg.png>] [21 <./results/ddpg/DDPG_critictlc.png>]
 [22 <./results/ddpg/DDPG_critictg.png>]
-<results/ddpg/1000_ep/Rewards.png, id=288, 722.7pt x 578.16pt>
+<results/ddpg/1000_ep/Rewards.png, id=290, 722.7pt x 578.16pt>
 File: results/ddpg/1000_ep/Rewards.png Graphic file (type png)
 <use results/ddpg/1000_ep/Rewards.png>
 Package pdftex.def Info: results/ddpg/1000_ep/Rewards.png  used on input line 3
-45.
+48.
 (pdftex.def)             Requested size: 433.62334pt x 245.71033pt.
-<results/ddpg/1000_ep/Epsilon.png, id=289, 722.7pt x 578.16pt>
+<results/ddpg/1000_ep/Epsilon.png, id=291, 722.7pt x 578.16pt>
 File: results/ddpg/1000_ep/Epsilon.png Graphic file (type png)
 <use results/ddpg/1000_ep/Epsilon.png>
 Package pdftex.def Info: results/ddpg/1000_ep/Epsilon.png  used on input line 3
-51.
+55.
 (pdftex.def)             Requested size: 433.62334pt x 245.71033pt.
  [23
 
  <./results/ddpg/1000_ep/Rewards.png>]
-<results/ddpg/5000_ep/Rewards.png, id=296, 722.7pt x 578.16pt>
+<results/ddpg/5000_ep/Rewards.png, id=298, 722.7pt x 578.16pt>
 File: results/ddpg/5000_ep/Rewards.png Graphic file (type png)
 <use results/ddpg/5000_ep/Rewards.png>
 Package pdftex.def Info: results/ddpg/5000_ep/Rewards.png  used on input line 3
-62.
+67.
 (pdftex.def)             Requested size: 433.62334pt x 245.71033pt.
-<results/ddpg/5000_ep/Epsilon.png, id=297, 722.7pt x 578.16pt>
+<results/ddpg/5000_ep/Epsilon.png, id=299, 722.7pt x 578.16pt>
 File: results/ddpg/5000_ep/Epsilon.png Graphic file (type png)
 <use results/ddpg/5000_ep/Epsilon.png>
 Package pdftex.def Info: results/ddpg/5000_ep/Epsilon.png  used on input line 3
-68.
+73.
 (pdftex.def)             Requested size: 433.62334pt x 245.71033pt.
  [24 <./results/ddpg/1000_ep/Epsilon.png>] [25 <./results/ddpg/5000_ep/Rewards.
-png> <./results/ddpg/5000_ep/Epsilon.png>]
-
-Package caption Warning: \label without proper reference on input line 344.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `DDPG_1000Ep_Rewards' on page 26 undefined on input li
-ne 373.
-
-
-Package caption Warning: \label without proper reference on input line 265.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `DQN_1000Ep_Rewards' on page 26 undefined on input lin
-e 373.
-
-
-Package caption Warning: \label without proper reference on input line 350.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `DDPG_1000Ep_Epsilon' on page 26 undefined on input li
-ne 373.
-
-
-Package caption Warning: \label without proper reference on input line 271.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `DQN_1000Ep_Epsilon' on page 26 undefined on input lin
-e 373.
-
-[26] [27] [28] (./Tarler-Reinforcement Learning.bbl
+png> <./results/ddpg/5000_ep/Epsilon.png>] [26] [27] [28]
+(./Tarler-Reinforcement Learning.bbl
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 86.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ))
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 420.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 425.
  [29]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 420.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 425.
 
 (./Tarler-Reinforcement Learning.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 420.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 420.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 425.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 425.
 Package rerunfilecheck Info: File `"Tarler-Reinforcement Learning".out' has not
  changed.
 (rerunfilecheck)             Checksum: 3A6183E82CCAD5045ACCC54D19A669FD;953.
-
-
-LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 10937 strings out of 480608
- 166112 string characters out of 5903631
- 444283 words of memory out of 5000000
- 26458 multiletter control sequences out of 15000+600000
+ 10939 strings out of 480682
+ 166138 string characters out of 5904663
+ 441538 words of memory out of 5000000
+ 26389 multiletter control sequences out of 15000+600000
  613448 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  49i,11n,51p,1714b,449s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -900,11 +851,11 @@ type1/public/lm/lmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publ
 ic/lm/lmsy6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm/lmsy8
 .pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr
 /local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "Tarler-Reinforcement Learning.pdf" (29 pages, 1027887 bytes)
+Output written on "Tarler-Reinforcement Learning.pdf" (29 pages, 1027774 bytes)
 .
 PDF statistics:
- 447 PDF objects out of 1000 (max. 8388607)
- 359 compressed objects within 4 object streams
+ 453 PDF objects out of 1000 (max. 8388607)
+ 365 compressed objects within 4 object streams
  92 named destinations out of 1000 (max. 500000)
  209 words of extra memory for PDF output out of 10000 (max. 10000000)
 

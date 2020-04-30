@@ -69,7 +69,7 @@ Deep Q-Networks are a variation on Q-Learning and so we will explain Q-Learning 
 Q^{\prime}(s_{t}, a_{t}) \leftarrow Q(s_{t}, a_{t}) + \alpha \cdot \left( r_{t} + \gamma \cdot \max_{\alpha} Q(s_{t+1}, a_{t}) - Q(s_{t}, a_{t}) \right)
 \end{equation}  where $Q^{\prime}$ is the updated policy, $\gamma \in \mathbb{R} \cap [0,1]$ is the \emph{discount} rate (or how much the model discount future values to the prevent), $\alpha \in \mathbb{R} \cap [0,1]$ is the \emph{learning rate} (how much the model learns from past actions) and $r_{t}$ is the present reward at time $t$.  Necessarily, setting $\gamma$ low means the model does not discount future actions as much and disregards actions that may improve its current state for a longer-term reward. Conversely, setting $\gamma$ high means future actions are heavily discounted and the model becomes greedy. When we set $\alpha$ to a low value, the model with not learn as much from its future actions and will bias itself towards using past, successful actions. When $\alpha$ is high, the model will learn more. A final variable that is vital is $\epsilon \in \mathbb{R} \cap [0,1]$ or the experimentation rate. If $\epsilon$ is high, the model will chose to undertake a completely random action more frequently rather than some policy it has already learned to be successful. 
 
-Equation \ref{bellman} is the cost function traditionally used in both Q-Learning and Deep-Variants. It is known as the Bellman equation. 
+Equation \eqref{bellman} is the cost function traditionally used in both Q-Learning and Deep-Variants. It is known as the Bellman equation. 
 
 Traditionally, Q-Networks have been trained using somewhat of a brute-force approach, where nearly every action and state combination. This means when states or actions gets very large, the efficacy of Q-Learning diminishes.  For the agent to be successful, every state must have been experienced and every possible sequence of actions must also have been undertaken. Deep Q-Networks relax this assumption by allowing very large action-state combination spaces, though they must be discrete in nature. That is, there are still a finite (but very large) number of action-state combinations. This means that the Q-Learner is replaced with a neural network of some sort, $Q: S \mapsto A$ which takes in the state of the environment and outputs a suitable action. Since neural networks can be used to approximate nearly an function $f$ this means that the action of training a neural network can approach a more efficient learner than the brute force approach. Other than using a neural network to determine the best policy, Deep Q-Networks are otherwise homeomorphic to traditional Q-Learning. 
 
@@ -104,7 +104,7 @@ Traditionally, Q-Networks have been trained using somewhat of a brute-force appr
 
 There are two key distinctions between Q-Learning and a Deep-Q-Network: The experience replay buffer and the actor-network. The Experience replay buffer is necessary because sequential experiences tend to be correlated. That is $s_{t} ~ s_{t+1}$ and so on.  We want these experiences to be independently distributed so that the Actor-network may gain a better understanding of what causes each $s_{t}$. Therefore we randomly sample from the replay buffer $\mathcal{D}$ and use a preimage process to de-correlate of $\phi_{i} = \phi(s_{i})$. 
 
-The actor-network is a typical neural network, what is critical is how we perform gradient descent in order to facilitate backward propagation. We then take equation \ref{bellman} and define a loss function \begin{equation}
+The actor-network is a typical neural network, what is critical is how we perform gradient descent in order to facilitate backward propagation. We then take equation \eqref{bellman} and define a loss function \begin{equation}
 \label{loss-dqn}
 L(\theta_{i}) = \mathbb{E}  \left[ (y_{i} -Q(s,a;\theta_{i}))^{2} \right]
 \end{equation} 
@@ -115,7 +115,7 @@ y_{i} =
 		r_{j} + \gamma  \max_{a ^{\prime}} Q^{\star} (\phi_{j+1}, a^{\prime}; \theta^{\prime})  &  \text{for non-terminal}  \phi_{J+1} 
 		\end{array} \right\}
 \end{equation}
-We can then take the derivative of \ref{y-loss} and yield \begin{equation}
+We can then take the derivative of \eqref{y-loss} and yield \begin{equation}
 \label{loss-actor}
 \nabla_{\theta_{i}} = \mathbb{E} \left[R_{t+1} + \gamma \max_{a^{\prime}} Q(s_{t+1},a^{\prime})-Q(s,  a; \theta_{i}))\nabla_{\theta_{i}}Q(s,a; \theta_{i} \right] 
 \end{equation}
@@ -160,11 +160,11 @@ The actor-critic network is similar to a GAN architecture. Since there is no \em
 
 The Replay Buffer is almost identical to the DQN network above, and we will not explore. Similar to above, there is a tuple of $(s_{i}, a_{i}, r_{i}, s_{i+1})$ that are randomly sampled to be used and create linearly independent states.
 
-Similar to Deep Q-Networks, the Actor network (which focuses on policy) is updated using a discounted future-state value of rewards, though with target value (critic) and target policy networks. Equations \ref{loss-actor} and \ref{loss-dqn} cover these.  However the Critic Network is the first significant difference from DQN. The crittic network contains the policy function \begin{equation} \label{policy} 
+Similar to Deep Q-Networks, the Actor network (which focuses on policy) is updated using a discounted future-state value of rewards, though with target value (critic) and target policy networks. Equations \eqref{loss-actor} and \eqref{loss-dqn} cover these.  However the Critic Network is the first significant difference from DQN. The crittic network contains the policy function \begin{equation} \label{policy} 
 J(\theta) = \mathbb{E}  \left[ Q(s,a) \vert_{s=s_{t}a=\mu(s_{t}} \right]
 \end{equation} 
 
-Since this is a well-defined function, all we have to do for the loss is to take the dertivate of the Policy function  \ref{policy} with respect to the policy parameter. That is:  \begin{equation} \label{polderiv}  \nabla_{\theta \mu} J \approx \frac{1}{N} \sum_{i} \nabla_{a} Q(s, a \vert \theta^{Q}) \vert_{s=s_{i}, a = \mu (s_{i})}  \nabla_{\theta\mu} \mu(s \vert \theta ^{\mu}) \vert s_{i} \end{equation}
+Since this is a well-defined function, all we have to do for the loss is to take the dertivate of the Policy function  \eqref{policy} with respect to the policy parameter. That is:  \begin{equation} \label{polderiv}  \nabla_{\theta \mu} J \approx \frac{1}{N} \sum_{i} \nabla_{a} Q(s, a \vert \theta^{Q}) \vert_{s=s_{i}, a = \mu (s_{i})}  \nabla_{\theta\mu} \mu(s \vert \theta ^{\mu}) \vert s_{i} \end{equation}
 
 Target Network updates are then performed where we take a copy of $\theta^{Q}$ and $\theta^{\mu}$ and update them with a parameter $\tau$. This allows for a slower \emph{learning} of these networks that takes place on a greater scale than epochs and episodes. 
 
@@ -223,12 +223,13 @@ The goal of the bipedal walker is to train the robot to complete the course. The
 \end{array}\right\}  \]
 
 This creates an easy to see victory condition, that is when $R> 300$. The specific structure of the cost function is such that the best performing Robot walkers will not only complete the course in a minimum of time, but will also have the smallest amount of energy used for walking.
-The starting position of the simulation is with the robot at the far left of the course with mostly straight legs. The failure condition is when the hull-contact sensor touches ground (the robot has fallen) or the stage has been complete.  Please reference \ref{biped} for a visual diagram of the environment. 
+The starting position of the simulation is with the robot at the far left of the course with mostly straight legs. The failure condition is when the hull-contact sensor touches ground (the robot has fallen) or the stage has been complete.  Please reference figure \ref{biped}  on \pageref{biped} for a visual diagram of the environment. 
 
 \begin{figure}[H]
-\label{biped}
+
 \caption{Bipedal Walker Environment}
 \includegraphics[width = \textwidth]{bipedal.png}
+\label{biped}
 \end{figure} 
 \FloatBarrier
 \clearpage
@@ -245,12 +246,13 @@ The following hyperparameters were used for DQN networks. \begin{itemize}
 \item $\epsilon_{\text{initial}} = 1.0$\footnote{$\epsilon$ varies throughout based on a decay rate of $0.995$} 
 \end{itemize}
 
-Additionally, we had a simple sequential model for the DQN, as shown in Figure \ref{DQN_Architecture}.
+Additionally, we had a simple sequential model for the DQN, as shown in Figure \ref{DQN_Architecture} on page \pageref{DQN_Architecture}.
 
 \begin{figure}
-\label{DQN_Architecture}
+
 \includegraphics[width=\textwidth]{results/dqn/DQN_Model.png}
 \caption{Neural Architecture of the DQN Model used for training}
+\label{DQN_Architecture}
 \end{figure}
 
 \FloatBarrier
@@ -262,15 +264,17 @@ Additionally, we had a simple sequential model for the DQN, as shown in Figure \
 \end{figure}
 
 \begin{figure}
-\label{DQN_1000Ep_Rewards}
+
 \includegraphics[width =\textwidth, height=0.4 \textheight]{results/dqn/1000_ep/Rewards.png}
 \caption{Reward  when DQN is run for 1000 Episodes}
+\label{DQN_1000Ep_Rewards}
 \end{figure}
 
 \begin{figure}
-\label{DQN_1000Ep_Epsilon}
+
 \includegraphics[width =\textwidth, height=0.4 \textheight]{results/dqn/1000_ep/Epsilon.png}
 \caption{Epislon when DQN is run for 1000 Episodes}
+\label{DQN_1000Ep_Epsilon}
 \end{figure}
 
 \FloatBarrier 
@@ -341,15 +345,16 @@ The four networks used in the DDPG are listed below:
 \subsubsection{1000 Episodes}
 
 \begin{figure}
-\label{DDPG_1000Ep_Rewards}
 \includegraphics[width =\textwidth, height=0.4 \textheight]{results/ddpg/1000_ep/Rewards.png}
 \caption{Reward when DDPG is run for 1000 Episodes}
+\label{DDPG_1000Ep_Rewards}
 \end{figure}
 
 \begin{figure}
-\label{DDPG_1000Ep_Epsilon}
+
 \includegraphics[width =\textwidth, height=0.4 \textheight]{results/ddpg/1000_ep/Epsilon.png}
 \caption{Epislon when DDPG is run for 1000 Episodes}
+\label{DDPG_1000Ep_Epsilon}
 \end{figure}
 
 \FloatBarrier 
@@ -370,7 +375,7 @@ The four networks used in the DDPG are listed below:
 \end{figure}
 \FloatBarrier
 \subsection{Comparison of DQN vs. DDPG}
-The DDPG, while taking a lot more computational resources due to four different neural networks being utilized, does show steadier and more consistent results. While neither robotic walker completed the course, the DDPG walker had less \emph{very large} negative rewards (comparing figures \ref{DDPG_1000Ep_Rewards} vs \ref{DQN_1000Ep_Rewards}). This indicates that the LSTM used for action replay, as well as the critic network enabled a stabilization of the DDPG network that the DQN was otherwise unable to access. This can also be partially explained by the DQN using a more random $\epsilon$ rather than the smoothly-decaying $\epsilon$. We can see an extremely smooth graduation of the $\epsilon$ as seen in figure \ref{DDPG_1000Ep_Epsilon} versus figure \ref{DQN_1000Ep_Epsilon}. This implies that with sufficient computational power the DDPG would more smoothly get to a trained walker, as opposed to the DQN which has to rely much more on random exploration in order to determine an optimal strategy. 
+The DDPG, while taking a lot more computational resources due to four different neural networks being utilized, does show steadier and more consistent results. While neither robotic walker completed the course, the DDPG walker had less \emph{very large} negative rewards (comparing figures \ref{DDPG_1000Ep_Rewards}  on page \pageref{DDPG_1000Ep_Rewards} vs figure \ref{DQN_1000Ep_Rewards} on page \pageref{DQN_1000Ep_Rewards}). This indicates that the LSTM used for action replay, as well as the critic network enabled a stabilization of the DDPG network that the DQN was otherwise unable to access. This can also be partially explained by the DQN using a more random $\epsilon$ rather than the smoothly-decaying $\epsilon$. We can see an extremely smooth graduation of the $\epsilon$ as seen in figure \ref{DDPG_1000Ep_Epsilon} on \pageref{DDPG_1000Ep_Epsilon} versus figure \ref{DQN_1000Ep_Epsilon} on page \pageref{DQN_1000Ep_Epsilon}. This implies that with sufficient computational power the DDPG would more smoothly get to a trained walker, as opposed to the DQN which has to rely much more on random exploration in order to determine an optimal strategy. 
 
 Where the two diverge more absolutely is the training time each took. While it is roughly difficult to compare the two due to training occurring on a shared cluster, we saw the following approximate results:
 
